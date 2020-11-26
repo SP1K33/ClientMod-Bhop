@@ -6,5 +6,6 @@
 		public const int LocalPlayer = 0x3C2650;
 		public const int Health = 0xF64;
 		public const int Flag = 0x3C0;
+		public const int Velocity = 0x3C5CFC;
 	}
 }

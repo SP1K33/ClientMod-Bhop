@@ -1,4 +1,7 @@
-﻿namespace ClientMod_Bhop
+﻿using System.Collections.Specialized;
+using System.Numerics;
+
+namespace ClientMod_Bhop
 {
 	public class Player
 	{
@@ -27,6 +30,11 @@
 		public static void SetJumpState(int state)
 		{
 			_clientMod.WriteMemory(_clientMod.ClientDLL + Offsets.ForceJump, state);
+		}
+
+		public static float GetVelocity()
+		{
+			return _clientMod.ReadMemory<float>(_clientMod.ClientDLL + Offsets.Velocity);
 		}
 	}
 }

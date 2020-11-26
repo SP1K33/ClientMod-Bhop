@@ -13,8 +13,7 @@ namespace ClientMod_Bhop
 		{
 			while (true)
 			{
-
-				if (_state && HoldingKey(VK_SPACE) && Player.GetHealth() > 0)
+				if (_state && HoldingKey(VK_SPACE) && Player.GetHealth() > 0 && Player.GetVelocity() > 1f)
 				{
 					int jumpState = (Player.GetFlag() & (1 << 0)) > 0 ? 5 : 4;
 					if (Player.GetJumpState() != jumpState)
