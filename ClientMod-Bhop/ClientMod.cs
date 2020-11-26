@@ -17,7 +17,7 @@ namespace ClientMod_Bhop
 
 		public bool Init()
 		{
-			_process = TryGetProccess();
+			_process = TryGetProcess();
 			if (_process == null)
 			{
 				return false;
@@ -32,7 +32,7 @@ namespace ClientMod_Bhop
 			return true;
 		}
 
-		private Process TryGetProccess()
+		private Process TryGetProcess()
 		{
 			var processes = Process.GetProcessesByName("CMLauncher");
 			return Array.Find(processes, m => m.MainWindowTitle == "CS:S v34 ClientMod");
@@ -55,8 +55,7 @@ namespace ClientMod_Bhop
 			int byteSize = Marshal.SizeOf(typeof(T));
 			byte[] buffer = new byte[byteSize];
 			ReadProcessMemory(_process.Handle, new IntPtr(address), buffer, buffer.Length, out _);
-			var structure = ByteArrayToStructure<T>(buffer);
-			return structure;
+			return ByteArrayToStructure<T>(buffer);
 		}
 
 		public void WriteMemory(int address, object value, bool needConvertToStructure = true)

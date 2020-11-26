@@ -2,7 +2,7 @@
 {
 	public class Player
 	{
-		private static readonly ClientMod _clientMod = ClientMod.Instance;
+		private static ClientMod _clientMod => ClientMod.Instance;
 
 		public static int GetJumpState()
 		{

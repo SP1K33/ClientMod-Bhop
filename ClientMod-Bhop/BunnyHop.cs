@@ -13,6 +13,7 @@ namespace ClientMod_Bhop
 		{
 			while (true)
 			{
+
 				if (_state && HoldingKey(VK_SPACE) && Player.GetHealth() > 0)
 				{
 					int jumpState = (Player.GetFlag() & (1 << 0)) > 0 ? 5 : 4;
@@ -39,7 +40,8 @@ namespace ClientMod_Bhop
 		}
 
 		private const int VK_SPACE = 0x20;
-		public const int VK_DELETE = 0x2E;
+		private const int VK_DELETE = 0x2E;
+
 		[DllImport("user32.dll")] private static extern short GetAsyncKeyState(int vKey);
 	}
 }
