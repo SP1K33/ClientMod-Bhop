@@ -9,7 +9,7 @@ namespace ClientMod_Bhop
 		#region Singleton
 		private ClientMod() { }
 		private static ClientMod _instance;
-		public static ClientMod Instance => _instance ??= new ClientMod();
+		public static ClientMod Instance => _instance ?? (_instance = new ClientMod());
 		#endregion
 
 		private Process _process { get; set; }
